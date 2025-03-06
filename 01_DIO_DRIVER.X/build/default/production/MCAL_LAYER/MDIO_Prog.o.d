@@ -1,0 +1,9 @@
+build/default/production/MCAL_LAYER/MDIO_Prog.o: MCAL_LAYER/MDIO_Prog.c \
+ MCAL_LAYER/../LIB/STD_TYPES.h MCAL_LAYER/../LIB/LBITMATH.h \
+ MCAL_LAYER/MDIO_Interface.h
+
+MCAL_LAYER/../LIB/STD_TYPES.h:
+
+MCAL_LAYER/../LIB/LBITMATH.h:
+
+MCAL_LAYER/MDIO_Interface.h:
