@@ -6,7 +6,7 @@
 
 #include "LIB/STD_TYPES.h"
 #include "LIB/LBITMATH.h"
-#include "MCAL_LAYER/MDIO_Interface.h"
+#include "MCAL_LAYER/MDIO/MDIO_Interface.h"
 
 // Simple delay function (adjust based on clock speed)
 void delay_ms(uint32 ms) {

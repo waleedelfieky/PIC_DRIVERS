@@ -5,8 +5,8 @@
 
 /*====================================================*/
 #include "xc.h"
-#include "../LIB/STD_TYPES.h"
-#include "../LIB/LBITMATH.h"
+#include "../../LIB/STD_TYPES.h"
+#include "../../LIB/LBITMATH.h"
 #include "MDIO_Interface.h"
 
 /*====================================================*/

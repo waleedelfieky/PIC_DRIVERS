@@ -10,8 +10,8 @@
 /*=================================================*/
 //include headers
 #include "xc.h"
-#include "../LIB/STD_TYPES.h"
-#include "../LIB/LBITMATH.h"
+#include "../../LIB/STD_TYPES.h"
+#include "../../LIB/LBITMATH.h"
 /*=================================================*/
 
 /*=================================================*/
