@@ -20,9 +20,6 @@ typedef enum {
 TimerStatus tmr_setup_period(uint8 timer, uint32 ms);
 void tmr_wait_period(uint8 timer);
 TimerStatus Timer_ASYNCHRONOUS(uint8 timer, uint32 ms);
-// call back setter functions
-void MTIMER_One_vSetCallback(void (*A_fptr)(void));
-void MTIMER_Two_vSetCallback(void (*A_fptr)(void));
 
 
 #endif	/* TIMER_INTERFACE */

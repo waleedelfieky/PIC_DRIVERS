@@ -25,8 +25,6 @@ void blinkled (void);
 int main(void) {
     //initlize funciton call
     init();
-    //set timer 2 interupt callback
-    MTIMER_Two_vSetCallback(blinkled);
     
     //Timer period setup
     tmr_setup_period(TIMER1, 200);
@@ -55,7 +53,7 @@ int main(void) {
 }
 
 
-
+/*=============================================================*/ 
 void init(void){
     /*
      inside this fucntion we are going to define the initilization for DIO
@@ -71,17 +69,24 @@ void init(void){
     SET_VAL_HIGH(A,0);
     SET_VAL_HIGH(G,9);
 }
+/*=============================================================*/ 
 
 
 
+//    
+//    
+//// Timer1 Interrupt Service Routine (ISR)
+//void __attribute__((__interrupt__, no_auto_psv)) _T1Interrupt(void) {
+//    /* Interrupt Service Routine code goes here */
+//
+//    IFS0bits.T1IF = 0; // Clear Timer1 Interrupt Flag
+//}
 
 
-void blinkled(void){
-    /*this function is the implementation for only test
-     the call back function inside the call back mechanism
-     it would only use the dio to toggle the led on and off
-     whenever it's needed
-     */
+/*=============================================================*/ 
+// Timer2 Interrupt Service Routine (ISR)
+void __attribute__((__interrupt__, no_auto_psv)) _T2Interrupt(void) {
+    /* Interrupt Service Routine code goes here */
     uint8 pin_val= GET_VAL(G,9);
     if (pin_val==1){
         //turn off the led
@@ -92,7 +97,6 @@ void blinkled(void){
         //set on the led
         SET_VAL_HIGH(G,9);
     }
-    
+    IFS0bits.T2IF = 0; // Clear Timer2 Interrupt Flag
 }
-    
-    
+/*=============================================================*/ 

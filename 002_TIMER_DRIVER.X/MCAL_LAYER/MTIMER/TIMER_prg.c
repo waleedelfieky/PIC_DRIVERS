@@ -11,9 +11,6 @@
 #include "TIMER_interface.h"
 
 
-//call back pointer function
-void (*Timer_One_Callback)(void);
-void (*Timer_Two_Callback)(void);
 
 TimerStatus tmr_setup_period(uint8 timer, uint32 ms) {
     //check if the ms is within the range 
@@ -110,28 +107,5 @@ TimerStatus Timer_ASYNCHRONOUS(uint8 timer, uint32 ms) {
 }
 
 
-void MTIMER_One_vSetCallback(void (*A_fptr)(void)){
-    Timer_One_Callback=A_fptr;
-}
-void MTIMER_Two_vSetCallback(void (*A_fptr)(void)){
-    Timer_Two_Callback=A_fptr;
-}
 
 
-
-
-// Timer2 Interrupt Service Routine (ISR)
-void __attribute__((__interrupt__, no_auto_psv)) _T1Interrupt(void) {
-    /* Interrupt Service Routine code goes here */
-    Timer_One_Callback();
-    IFS0bits.T1IF = 0; // Clear Timer1 Interrupt Flag
-}
-
-
-
-// Timer2 Interrupt Service Routine (ISR)
-void __attribute__((__interrupt__, no_auto_psv)) _T2Interrupt(void) {
-    /* Interrupt Service Routine code goes here */
-    Timer_Two_Callback();
-    IFS0bits.T2IF = 0; // Clear Timer2 Interrupt Flag
-}
