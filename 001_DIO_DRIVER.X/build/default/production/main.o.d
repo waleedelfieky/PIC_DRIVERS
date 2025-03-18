@@ -1,0 +1,11 @@
+build/default/production/main.o: main.c LIB/STD_TYPES.h \
+ MCAL_LAYER/MDIO/MDIO_Interface.h MCAL_LAYER/MDIO/../../LIB/STD_TYPES.h \
+ MCAL_LAYER/MDIO/../../LIB/LBITMATH.h
+
+LIB/STD_TYPES.h:
+
+MCAL_LAYER/MDIO/MDIO_Interface.h:
+
+MCAL_LAYER/MDIO/../../LIB/STD_TYPES.h:
+
+MCAL_LAYER/MDIO/../../LIB/LBITMATH.h:
